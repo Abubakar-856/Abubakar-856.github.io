@@ -655,12 +655,12 @@ main { overflow-x: hidden; }
 }
 
 .skill-card .card-icon img {
-  max-width: 80px;     /* control how big the icon can be */
-  max-height: 80px;    /* keep it inside the 80x80 card */
-  width: 60%;          /* scales nicely for most icons */
-  height: auto;
-  object-fit: contain; /* prevents stretching/cropping */
+  width: 70px;         /* best size for 80x80 container */
+  height: 70px;
+  object-fit: contain;
+  display: block;
 }
+
 
 .skill-card:hover .tooltip {
   transform: translateY(0);

@@ -654,6 +654,14 @@ main { overflow-x: hidden; }
   cursor: help;
 }
 
+.skill-card .card-icon img {
+  max-width: 60px;     /* control how big the icon can be */
+  max-height: 60px;    /* keep it inside the 80x80 card */
+  width: 60%;          /* scales nicely for most icons */
+  height: auto;
+  object-fit: contain; /* prevents stretching/cropping */
+}
+
 .skill-card:hover .tooltip {
   transform: translateY(0);
   opacity: 1;

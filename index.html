@@ -648,11 +648,13 @@
 
         <form action="https://formsubmit.co/chabubakar855@gmail.com" method="POST" class="contact-form">
 
-          <!-- Optional settings -->
+          <!-- FormSubmit settings -->
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_subject" value="New message from your portfolio website">
-          <input type="hidden" name="_next" value="https://abubakar-856.github.io/thankyou.html">
+        
+          <!-- Redirect back to the same page with success=1 -->
+          <input type="hidden" name="_next" value="?success=1#contact">
         
           <div class="form-wrapper">
         
@@ -702,7 +704,13 @@
         
           <button type="submit" class="btn btn-primary">Send</button>
         
+          <!-- SUCCESS MESSAGE -->
+          <div id="form-success" class="form-success" style="display: none; margin-top: 1rem;">
+            <span>✅ Your message has been sent successfully!</span>
+          </div>
+        
         </form>
+        
         
 
       </section>
@@ -760,6 +768,28 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const success = params.get("success");
+      const successBox = document.getElementById("form-success");
+  
+      if (success === "1" && successBox) {
+        // Show success message
+        successBox.style.display = "block";
+  
+        // Reset form fields
+        const form = document.querySelector(".contact-form");
+        if (form) form.reset();
+  
+        // Clean URL (removes ?success=1)
+        const url = new URL(window.location.href);
+        url.searchParams.delete("success");
+        window.history.replaceState({}, "", url.toString());
+      }
+    })();
+  </script>
+  
 
 </body>
 

@@ -824,6 +824,17 @@ main { overflow-x: hidden; }
   margin-left: 5px;
 }
 
+.form-success {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-12);
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-1);
+  font-size: 0.95rem;
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  color: var(--text-color, #ffffff);
+}
+
+
 .input-wrapper { position: relative; }
 
 .input-field {
